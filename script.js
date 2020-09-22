@@ -1,14 +1,40 @@
 var passwordLen= prompt('How long do you want your password to be?');
-var hasUpper = confirm('Do you want uppercase characters?');
-var hasLower = confirm('Do you want lowercase characters?');
-var hasNum = confirm('Do you want numeric characters?');
-var hasSymbols = confirm('Do you want special characters?');
 
-var charSet = '';
-if (hasUpper) charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-if (hasLower) charSet = "abcdefghijklmnopqrstuvwxyz";
-if (hasNum) charSet = "0123456789";
-if (hasSymbols) charSet = "!@#$%^&*()"
+var validLen = parseInt(passwordLen);
+
+//Checking for valid int input
+if ( !validLen || validLen < 8 || validLen > 128){
+  alert("Sorry, please choose a password length from 8-128.");
+  
+}
+else{
+  console.log(validLen);
+  var charSet = [];
+
+  //Uppercase
+  var hasUpper = confirm('Do you want uppercase characters?');
+  if (hasUpper) charSet.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  console.log(charSet);
+
+  //Lowercase
+  var hasLower = confirm('Do you want lowercase characters?');
+  if (hasLower) charSet.push("abcdefghijklmnopqrstuvwxyz");
+  console.log(charSet);
+
+  //Numeric
+  var hasNum = confirm('Do you want numeric characters?');
+  if (hasNum) charSet.push("0123456789");
+  console.log(charSet);
+  
+  //Symbols
+  var hasSymbols = confirm('Do you want special characters?');
+  if (hasSymbols) charSet.push( "!@#$%^&*()");
+  console.log(charSet);
+
+
+}
+
+
 
 
 // Assignment Code
@@ -19,9 +45,16 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  for (var i = 0; i < passwordText.length; i++){
+
+  }
+
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+function generatePassword(){
+  generateBtn.addEventListener("click", writePassword);
+
+}
