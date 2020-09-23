@@ -8,4 +8,6 @@ The user will be given a series of prompts for password criteria. The password l
 
 ## Process
 
+A variable `passwordLen` is first created to store user input for password length. Then the variable `validLen` is created to parse passwordLen into an integer so then we can check it for validation. If the user input is invalid, it will return the alert message. 
 
+Next, the following `hasUpper`, `hasLower`,`hasNum`,`hasSymbols`variables were created for a series of confirm functions. For each true variable, their respective string of character type is appended to the array `charSet`. Afterwards, the `charSet.join('')` function will merge all charSet indexes into one string.
