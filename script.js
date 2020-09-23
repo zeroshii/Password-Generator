@@ -25,11 +25,19 @@ else{
   var hasNum = confirm('Do you want numeric characters?');
   if (hasNum) charSet.push("0123456789");
   console.log(charSet);
-  
+
   //Symbols
   var hasSymbols = confirm('Do you want special characters?');
   if (hasSymbols) charSet.push( "!@#$%^&*()");
   console.log(charSet);
+
+  console.log(charSet.join(''));
+
+  //Checking if at least one character set is selected
+  if (charSet == ''){
+    alert("You must choose at least one character set.")
+  }
+
 
 
 }
@@ -45,8 +53,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  for (var i = 0; i < passwordText.length; i++){
-
+  for (var i = 0; i < validLen; i++){
+    var uniquePass = Math.floor(Math.random() * charSet);
   }
 
   passwordText.value = password;
