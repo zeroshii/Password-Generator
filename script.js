@@ -7,7 +7,7 @@ if ( !validLen || validLen < 8 || validLen > 128){
   alert("Sorry, please choose a password length from 8-128.");
 }
 else{
-  console.log(validLen);
+
   var charSet = [];
 
   //Uppercase
@@ -28,39 +28,33 @@ else{
   //Symbols
   var hasSymbols = confirm('Do you want special characters?');
   if (hasSymbols) charSet.push( "!@#$%^&*()");
-  
 
-  charSet.join('-')
-  console.log(charSet);
+  var criteria = charSet.join('')
 
   //Checking if at least one character set is selected
+
   if (charSet == ''){
     alert("You must choose at least one character set.")
   }
 
 }
-//slice a random character from each charSet index (string of characters)
-//var validLen is password length
+
+//Generate unique password and then display to textarea
 
 function createPassword (){
+  var uniquePass = ''
   for (let i = 0; i < validLen; i++) {
-    charSet[i]
-    
+    uniquePass += criteria.charAt(Math.floor(Math.random() * criteria.length))
   }
-
-}
+  
+  document.getElementById("generate").addEventListener("click", function() {
+  document.getElementById("password").value = uniquePass;
+  });
+} 
 createPassword()
 
 
-//Generate button to display password
 
-document.getElementById("generate").addEventListener("click", function() {
-  document.getElementById("password").value = charSet;
-});
 
-/*   for (var i = 0; i < validLen; i++){
-    var uniquePass = Math.floor(Math.random() * charSet);
-  }
 
-  passwordText.value = password;
- */
+
