@@ -4,7 +4,7 @@ This is a password generator application that asks the user for a password lengt
 
 See the deployed application here: [Password Generator](https://zeroshii.github.io/Password-Generator/)
 
-![screenshot](https://github.com/zeroshii/Code-Refactor/blob/master/screenshot.png)
+![screenshot](https://github.com/zeroshii/Password-Generator/blob/master/screenshot.png)
 
 # Technologies Used
 
